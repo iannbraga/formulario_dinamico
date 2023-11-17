@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FormularioDinamico</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <ul>
+      <li><%= link_to 'Produtos', produtos_path %></li>
+      <li><%= link_to 'Vendas', vendas_path %></li>
+    </ul>
+    <%= yield %>
+  </body>
+</html>
