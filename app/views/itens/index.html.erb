@@ -1,0 +1,10 @@
+<h1>Itens</h1>
+<ul>
+    <% @itens.each do |item| %>
+        <li>
+            <%= item.id %> - <%= link_to item.produto.nome, item %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to 'Add', new_item_path, class: 'bi bi-plus' %>

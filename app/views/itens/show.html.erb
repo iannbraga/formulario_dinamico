@@ -1,0 +1,7 @@
+<div class="row">
+    <div class="col-12">
+        <p><%= @item.id %> - <%= @item.produto.nome %> - <%= @item.preco_unitario %></p>
+    </div>
+</div>
+<%= button_to '', @item, class: 'nav-link bi bi-trash-fill text-danger', method: :delete %>
+<%= link_to '', edit_item_path(@item), class: 'nav-link bi bi-pencil-fill text-warning' %>

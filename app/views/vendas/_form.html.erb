@@ -1,0 +1,23 @@
+<%= form_with(model: venda) do |form| %>
+    <div class="row">
+        <div class="col-12">
+            <h3>Itens</h3>
+            <div class="row">
+                <% @venda.itens.each do |item| %>
+                    <div class="col"></div>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-12">
+            <%= form.label :total, class: 'form-label' %>
+            <%= form.number_field :total, class: 'form-control' %>
+        </div>
+        <div class="col-6 mt-3 text-center">
+            <%= form.submit 'Cadastrar', class: 'btn btn-outline-primary' %>
+        </div>
+        <div class="col-6 mt-3 text-center">
+            <%= link_to 'Cancelar', vendas_path, class: 'btn btn-outline-danger' %>
+        </div>
+    </div>
+
+<% end %>

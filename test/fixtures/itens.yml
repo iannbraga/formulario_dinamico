@@ -2,12 +2,10 @@
 
 one:
   produto: one
-  venda: one
   preco_unitario: 9.99
   quantidade: 1
 
 two:
   produto: two
-  venda: two
   preco_unitario: 9.99
   quantidade: 1

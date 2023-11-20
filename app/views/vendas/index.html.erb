@@ -1,14 +1,10 @@
 <h1>Vendas</h1>
-
 <ul>
     <% @vendas.each do |venda| %>
         <li>
-            <% venda.itens.each do |item| %>
-                <%= item.produto.nome %>
-            <% end %>
-            <p><%= venda.total %> </p>
+            <%= venda.nome%>
         </li>
     <% end %>
 </ul>
 
-<%= link_to 'Nova venda', new_venda_path %>
+<%= link_to 'Nova Venda', new_venda_path %>

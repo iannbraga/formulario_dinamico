@@ -3,7 +3,9 @@
 one:
   nome: MyString
   preco: 9.99
+  ativo: false
 
 two:
   nome: MyString
   preco: 9.99
+  ativo: false

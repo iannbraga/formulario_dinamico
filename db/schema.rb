@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_17_194901) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_20_192920) do
   create_table "itens", force: :cascade do |t|
     t.integer "produto_id", null: false
-    t.integer "venda_id", null: false
     t.decimal "preco_unitario"
     t.integer "quantidade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["produto_id"], name: "index_itens_on_produto_id"
-    t.index ["venda_id"], name: "index_itens_on_venda_id"
   end
 
   create_table "produtos", force: :cascade do |t|
     t.string "nome"
     t.decimal "preco"
+    t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,5 +35,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_194901) do
   end
 
   add_foreign_key "itens", "produtos"
-  add_foreign_key "itens", "vendas"
 end

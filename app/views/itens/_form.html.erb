@@ -1,0 +1,24 @@
+<%= form_with(model: item) do |form| %>
+    <div class="row">
+        <div class="col-4">
+            <%= form.label :produto_id, class: 'form-label' %>
+            <%#= form.select :produto_id, @produtos, {}, class: 'form-select' %>
+            <%= form.collection_select :produto_id, Produto.all, :id, :nome, {}, class: 'form-select produto-select' %>
+        </div>
+
+        <div class="col-3">
+            <%= form.label :preco_unitario, class: 'form-label' %>
+            <%= form.text_field :preco_unitario, class: 'form-control', value: "#{ }" %>
+        </div>
+        <div class="col-3">
+            <%= form.label :quantidade, class: 'form-label' %>
+            <%= form.number_field :quantidade, class: 'form-control', value: 1 %>
+        </div>
+        <div class="col-6 mt-3">
+            <%= form.submit 'Cadastrar', class: 'btn btn-outline-primary' %>
+        </div>
+        <div class="col-6 mt-3">
+            <%= link_to 'Cancelar', itens_path, class: 'btn btn-outline-danger' %>
+        </div>
+    </div>
+<% end %>

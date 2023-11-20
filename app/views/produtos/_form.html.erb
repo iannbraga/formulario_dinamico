@@ -1,27 +1,19 @@
 <%= form_with(model: produto) do |form| %>
-  <% if produto.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
 
-      <ul>
-        <% produto.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="row">
+        <div class="col-12">
+            <%= form.label :nome, class: 'form-label' %>
+            <%= form.text_field :nome, class: 'form-control' %>
+        </div>
+        <div class="col-12">
+            <%= form.label :preco, class: 'form-label' %>
+            <%= form.number_field :preco, class: 'form-control' %>
+        </div>
+        <div class="col-6 mt-3">
+            <%= form.submit 'Cadastrar', class: 'btn btn-outline-primary' %>
+        </div>
+        <div class="col-6 mt-3">
+            <%= link_to 'Cancelar', produtos_path, class: 'btn btn-outline-danger' %>
+        </div>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
-  </div>
-
-  <div>
-    <%= form.label :preco, style: "display: block" %>
-    <%= form.text_field :preco %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
